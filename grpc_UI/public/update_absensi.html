@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Absensi</title>
+    <!-- Tautan ke Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.5/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- Skrip Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar bg-neutral">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-white text-xl">AttendEase</a>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1 text-white">
+                <li><a href="/">Home</a></li>
+                <li><a href="/landing_page">Menu</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero min-h-screen" style="background-image: url(https://img.freepik.com/free-photo/diverse-people-working-office_53876-104681.jpg?t=st=1714997744~exp=1715001344~hmac=7a3f598bd63073bc69e124aae77426c7dcf39837290f9fac730c99aab574f27e&w=2000);">
+            <!-- Overlay untuk memperjelas teks -->
+            <div class="hero-overlay bg-opacity-60"></div>
+            <div class="hero-content text-center text-neutral-content">
+        </div>
+        <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="text-center lg:text-center">
+                <h1 class="text-5xl font-bold text-white mb-8">Update Absensi</h1>
+            </div>
+            <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <form class="card-body" method="POST">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Nama Karyawan</span>
+                        </label>
+                        <input type="text" id="nama_karyawan" name="nama_karyawan" placeholder="Nama Karyawan" class="input input-bordered" required />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Tanggal</span>
+                        </label>
+                        <input type="date" id="tanggal" name="tanggal" placeholder="Tanggal" class="input input-bordered" required />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Bagian yang ingin diubah</span>
+                        </label>
+                        <select id="bagian" name="bagian" class="input input-bordered">
+                            <option value="nama_karyawan">Nama Karyawan</option>
+                            <option value="tanggal">Tanggal</option>
+                            <option value="divisi">Divisi</option>
+                            <option value="waktu_masuk">Waktu Masuk</option>
+                            <option value="waktu_keluar">Waktu Keluar</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Nilai Baru</span>
+                        </label>
+                        <input type="text" id="nilai_baru" name="nilai_baru" placeholder="Nilai Baru" class="input input-bordered" required />
+                    </div>
+                    <div class="form-control mt-6">
+                        <button id="submitButton" class="btn" type="button">Submit</button>
+                        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                            <div class="modal-box flex flex-col items-center">
+                                <h3 class="font-bold text-lg">Halo!</h3>
+                                <p class="py-4">Data absensi berhasil diperbarui.</p>
+                                <div class="modal-action">
+                                    <form method="dialog">
+                                        <!-- Tombol untuk menutup modal -->
+                                        <button class="btn" onclick="my_modal_5.close()">Close</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function(event) {
+            var inputs = document.querySelectorAll('input[required], select[required]');
+            var isValid = true;
+            inputs.forEach(function(input) {
+                if (!input.value.trim()) {
+                    isValid = false;
+                }
+            });
+
+            if (isValid) {
+                my_modal_5.showModal();
+            } else {
+                alert('Silakan lengkapi semua kolom sebelum melanjutkan.');
+            }
+        });
+    </script>
+
+</body>
+</html>

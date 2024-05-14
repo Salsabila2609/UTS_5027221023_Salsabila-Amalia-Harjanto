@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <!-- Tautan ke Tailwind CSS dan DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.5/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar bg-neutral">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-white text-xl">AttendEase</a>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1 text-white">
+                <li><a href="/">Home</a></li>
+                <li><a href="/contact_info">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content with padding top to prevent overlap with fixed navbar -->
+    <div class="pt-16 bg-base-200 flex justify-center items-center min-h-screen">
+        <div class="hero min-h-screen" style="background-image: url('https://img.freepik.com/free-photo/diverse-people-working-office_53876-104681.jpg?t=st=1714997744~exp=1715001344~hmac=7a3f598bd63073bc69e124aae77426c7dcf39837290f9fac730c99aab574f27e&w=2000');">
+            <!-- Overlay -->
+            <div class="hero-overlay bg-opacity-60 bg-black"></div>
+            <div class="hero-content text-center text-neutral-content">
+                <div class="container mx-auto py-8">
+                    <!-- Judul -->
+                    <h1 class="text-4xl font-bold text-white mb-8">Pilih Menu</h1>
+                    <!-- Grid Card -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Card untuk absen masuk -->
+                        <div class="card w-96 bg-neutral text-neutral-content mx-auto">
+                            <div class="card-body">
+                                <h2 class="card-title">Absen Masuk</h2>
+                                <p class="text-left">Klik untuk melakukan absensi masuk.</p>
+                                <div class="card-actions justify-end">
+                                    <a href="/create_absensi_masuk" class="btn">Absen Masuk</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card untuk absen pulang -->
+                        <div class="card w-96 bg-neutral text-neutral-content mx-auto">
+                            <div class="card-body">
+                                <h2 class="card-title">Absen Pulang</h2>
+                                <p class="text-left">Klik untuk melakukan absensi pulang.</p>
+                                <div class="card-actions justify-end">
+                                    <a href="/create_absensi_pulang" class="btn">Absen Pulang</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card untuk edit absensi -->
+                        <div class="card w-96 bg-neutral text-neutral-content mx-auto">
+                            <div class="card-body">
+                                <h2 class="card-title">Edit Absensi</h2>
+                                <p class="text-left">Klik untuk mengedit data absensi.</p>
+                                <div class="card-actions justify-end">
+                                    <a href="/update_absensi" class="btn">Edit Absensi</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card untuk cek absensi -->
+                        <div class="card w-96 bg-neutral text-neutral-content mx-auto">
+                            <div class="card-body">
+                                <h2 class="card-title">Cek Absensi</h2>
+                                <p class="text-left">Klik untuk melihat data absensi.</p>
+                                <div class="card-actions justify-end">
+                                    <a href="/read_absensi" class="btn">Cek Absensi</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card untuk hapus absensi -->
+                        <div class="card w-96 bg-neutral text-neutral-content mx-auto">
+                            <div class="card-body">
+                                <h2 class="card-title">Hapus Absensi</h2>
+                                <p class="text-left">Klik untuk menghapus data absensi.</p>
+                                <div class="card-actions justify-end">
+                                    <a href="/delete_absensi" class="btn">Hapus Absensi</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End of Grid Card -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
