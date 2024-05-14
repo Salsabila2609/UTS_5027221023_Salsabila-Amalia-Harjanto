@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+message Absensi {
+  string id = 1;
+  string nama_karyawan = 2;
+  string tanggal = 3;
+  string divisi = 4;
+  string waktu_masuk = 5;
+  string waktu_keluar = 6;
+}
+
+message AbsensiId {
+  string id = 1;
+}
+
+message AbsensiRequest {
+  string id = 1;
+  string nama_karyawan = 2;
+  string tanggal = 3;
+}
+
+service AbsensiService {
+  rpc CreateAbsensiMasuk(Absensi) returns (Absensi) {}
+  rpc CreateAbsensiPulang(Absensi) returns (Absensi) {}
+  rpc UpdateAbsensi(Absensi) returns (Absensi) {}
+  rpc ReadAbsensi(AbsensiRequest) returns (stream Absensi) {}
+  rpc DeleteAbsensi(AbsensiRequest) returns (Absensi) {}
+  rpc SearchAbsensiIdByNamaKaryawanAndTanggal(AbsensiRequest) returns (AbsensiId) {}
+}
